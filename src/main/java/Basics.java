@@ -7,6 +7,8 @@
  * relevant readings for each task.
  */
 
+import java.util.Arrays;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -100,7 +102,7 @@ public class Basics {
          * Current count: 0
          */
 
-        for (int i = 1; i <= 10; i++){
+        for (int i = 10; i >=0 ; i--){
             System.out.println("Current count: " + i);
         }
 
@@ -146,7 +148,12 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
-        ret.append(to_split.split(" "));
+        ret.append(to_split.charAt(0));
+        for (int i = 0; i <= to_split.length(); i++){
+            if (to_split.charAt(i) == ' '){
+                ret.append(to_split.charAt(i+1));
+            }
+        }
 
         return ret.toString();
     }
@@ -176,7 +183,9 @@ public class Basics {
          */
 
         for (int i = 0; i < arr.length; i++) {
-            current_sum = current_sum + arr[i];
+            if (arr[i] % 2 == 1){
+                current_sum = current_sum + arr[i];
+            }
         }
 
         return current_sum;
