@@ -148,11 +148,8 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
-        ret.append(to_split.charAt(0));
-        for (int i = 0; i <= to_split.length(); i++){
-            if (to_split.charAt(i) == ' '){
-                ret.append(to_split.charAt(i+1));
-            }
+        for (String s : to_split.split(" ")) {
+            ret.append(s.charAt(0));
         }
 
         return ret.toString();
@@ -183,7 +180,7 @@ public class Basics {
          */
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 1){
+            if (arr[i] % 2 != 0){
                 current_sum = current_sum + arr[i];
             }
         }
